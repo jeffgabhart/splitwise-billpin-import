@@ -4,6 +4,10 @@ var prompt = require('prompt');
 
 var schema = {
   properties: {
+    file: {
+      required: true,
+      default: 'file.json'
+    },
     dryRun: {
       type: 'boolean',
       default: true
@@ -15,6 +19,7 @@ prompt.start();
 
 prompt.get(schema, function(err, input) {
   if (input.dryRun) {
-    console.log('dry run');
+    var file = require(__dirname + '\\' + input.file);
+    console.log(file.results[0]);
   }
 });
