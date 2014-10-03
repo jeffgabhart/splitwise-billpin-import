@@ -25,7 +25,7 @@ prompt.get(schema, function(err, input) {
     console.log('Who Owes: ' + tx.receiver.name);
     console.log('Amount: ' + tx.amount);
     console.log('Description: ' + tx.message);
-    console.log('Date: ' + tx.happenedAt.iso);
-    console.log(tx.receiver.name + ' owes ' + tx.sender.name + ' $' + tx.amount + ' for ' + tx.message + ' on ' + tx.happenedAt.iso);
+    console.log('Date: ' + tx.happenedAt.iso.substring(0, tx.happenedAt.iso.indexOf('T')));
+    console.log(tx.receiver.name + ' owes ' + tx.sender.name + ' $' + tx.amount + ' for ' + tx.message + ' on ' + tx.happenedAt.iso.substring(0, tx.happenedAt.iso.indexOf('T')));
   });
 });
