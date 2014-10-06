@@ -2,7 +2,6 @@ var _ = require('lodash');
 var OAuth = require('oauth');
 var optimist = require('optimist');
 var prompt = require('prompt');
-var util = require('util');
 
 var schema = {
   properties: {
@@ -60,7 +59,7 @@ prompt.get(schema, function(err, input) {
       },
       null,
       function(err, data, response) {
-        console.log(util.inspect(data));
+        console.log(data);
       }
     );
   });
