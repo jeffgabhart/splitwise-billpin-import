@@ -4,9 +4,11 @@ var prompt = require('prompt');
 
 var schema = {
   properties: {
-    file: {
-      required: true,
-      default: 'file.json'
+    consumerKey: {
+      required: true
+    },
+    consumerSecret: {
+      required: true
     },
     friendId: {
       required: true
