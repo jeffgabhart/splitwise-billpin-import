@@ -9,8 +9,9 @@ function toSentence(tx) {
     console.log('Who Owes: ' + tx.receiver.name);
     console.log('Amount: ' + tx.amount);
     console.log('Description: ' + tx.message);
-    console.log('Date: ' + tx.happenedAt.iso.substring(0, tx.happenedAt.iso.indexOf('T')));
-    var sentence = tx.receiver.name + ' owes ' + tx.sender.name + ' $' + tx.amount + ' for ' + tx.message + ' on ' + tx.happenedAt.iso.substring(0, tx.happenedAt.iso.indexOf('T'));
+    var date = tx.happenedAt ? tx.happenedAt.iso : tx.createdAt;
+    console.log('Date: ' + date.substring(0, date.indexOf('T')));
+    var sentence = tx.receiver.name + ' owes ' + tx.sender.name + ' $' + tx.amount + ' for ' + tx.message + ' on ' + date.substring(0, date.indexOf('T'));
     console.log(sentence);
     return sentence;
 }
