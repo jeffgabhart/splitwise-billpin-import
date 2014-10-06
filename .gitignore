@@ -3,7 +3,7 @@ import
 oauth
 
 # Input file
-file.json
+friend.json
 
 # Logs
 logs
