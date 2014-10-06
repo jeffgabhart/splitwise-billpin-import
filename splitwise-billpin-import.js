@@ -10,6 +10,12 @@ var schema = {
     consumerSecret: {
       required: true
     },
+    accessKey: {
+      required: true
+    },
+    accessSecret: {
+      required: true
+    },
     friendId: {
       required: true
     }
