@@ -4,6 +4,7 @@
   "dependencies": {
     "lodash": "^2.4.1",
     "optimist": "^0.6.1",
-    "prompt": "^0.2.13"
+    "prompt": "^0.2.13",
+    "oauth": "0.9.12"
   }
 }
