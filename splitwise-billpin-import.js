@@ -3,6 +3,18 @@ var OAuth = require('oauth');
 var optimist = require('optimist');
 var prompt = require('prompt');
 
+function toSentence(tx) {
+    console.log('----------------------------------')
+    console.log('Who Paid: ' + tx.sender.name);
+    console.log('Who Owes: ' + tx.receiver.name);
+    console.log('Amount: ' + tx.amount);
+    console.log('Description: ' + tx.message);
+    console.log('Date: ' + tx.happenedAt.iso.substring(0, tx.happenedAt.iso.indexOf('T')));
+    var sentence = tx.receiver.name + ' owes ' + tx.sender.name + ' $' + tx.amount + ' for ' + tx.message + ' on ' + tx.happenedAt.iso.substring(0, tx.happenedAt.iso.indexOf('T'));
+    console.log(sentence);
+    return sentence;
+}
+
 var schema = {
   properties: {
     consumerKey: {
@@ -39,20 +51,13 @@ prompt.get(schema, function(err, input) {
   var file = require(__dirname + '\\friend.json');
   var some = _.first(file.results, 1);
   _.each(some, function(tx) {
-    console.log('----------------------------------')
-    console.log('Who Paid: ' + tx.sender.name);
-    console.log('Who Owes: ' + tx.receiver.name);
-    console.log('Amount: ' + tx.amount);
-    console.log('Description: ' + tx.message);
-    console.log('Date: ' + tx.happenedAt.iso.substring(0, tx.happenedAt.iso.indexOf('T')));
-    var natural = tx.receiver.name + ' owes ' + tx.sender.name + ' $' + tx.amount + ' for ' + tx.message + ' on ' + tx.happenedAt.iso.substring(0, tx.happenedAt.iso.indexOf('T'));
-    console.log(natural);
+    var sentence = toSentence(tx);
     oauth.post(
       'https://secure.splitwise.com/api/v3.0/parse_sentence',
       input.accessToken,
       input.accessSecret,
       {
-        input: natural,
+        input: sentence,
         friend_id: input.friendId,
         //autosave: false,
         //creation_method: 'quickadd'
