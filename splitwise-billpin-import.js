@@ -1,4 +1,5 @@
 var _ = require('lodash');
+var OAuth = require('oauth');
 var optimist = require('optimist');
 var prompt = require('prompt');
 
