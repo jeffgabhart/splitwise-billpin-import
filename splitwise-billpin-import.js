@@ -37,7 +37,7 @@ prompt.get(schema, function(err, input) {
   'HMAC-SHA1');
 
   var file = require(__dirname + '\\friend.json');
-  var some = _.first(file.results, 20);
+  var some = _.first(file.results, 1);
   _.each(some, function(tx) {
     console.log('----------------------------------')
     console.log('Who Paid: ' + tx.sender.name);
