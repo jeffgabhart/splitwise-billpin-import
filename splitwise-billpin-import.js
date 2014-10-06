@@ -11,7 +11,7 @@ var schema = {
     consumerSecret: {
       required: true
     },
-    accessKey: {
+    accessToken: {
       required: true
     },
     accessSecret: {
