@@ -4,15 +4,15 @@ var optimist = require('optimist');
 var prompt = require('prompt');
 
 function toSentence(tx) {
-    console.log('----------------------------------')
-    console.log('Who Paid: ' + tx.sender.name);
-    console.log('Who Owes: ' + tx.receiver.name);
-    console.log('Amount: ' + tx.amount);
-    console.log('Description: ' + tx.message);
+    // console.log('----------------------------------')
+    // console.log('Who Paid: ' + tx.sender.name);
+    // console.log('Who Owes: ' + tx.receiver.name);
+    // console.log('Amount: ' + tx.amount);
+    // console.log('Description: ' + tx.message);
     var date = tx.happenedAt ? tx.happenedAt.iso : tx.createdAt;
-    console.log('Date: ' + date.substring(0, date.indexOf('T')));
+    // console.log('Date: ' + date.substring(0, date.indexOf('T')));
     var sentence = tx.receiver.name + ' owes ' + tx.sender.name + ' $' + tx.amount + ' for ' + tx.message + ' on ' + date.substring(0, date.indexOf('T'));
-    console.log(sentence);
+    // console.log(sentence);
     return sentence;
 }
 
