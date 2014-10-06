@@ -30,8 +30,8 @@ prompt.get(schema, function(err, input) {
   var oauth = new OAuth.OAuth(
   'https://secure.splitwise.com/api/v3.0/get_request_token',
   'https://secure.splitwise.com/api/v3.0/get_access_token',
-  result.consumerKey,
-  result.consumerSecret,
+  input.consumerKey,
+  input.consumerSecret,
   '1.0',
   null,
   'HMAC-SHA1');
