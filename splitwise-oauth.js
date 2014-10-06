@@ -2,14 +2,6 @@ var OAuth = require('oauth');
 var optimist = require('optimist');
 var prompt = require('prompt');
 
-var schema = {
-  properties: {
-    verifier: {
-      required: true
-    }
-  }
-};
-
 prompt.override = optimist.argv;
 prompt.start();
 
