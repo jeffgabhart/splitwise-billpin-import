@@ -2,6 +2,7 @@ var _ = require('lodash');
 var OAuth = require('oauth');
 var optimist = require('optimist');
 var prompt = require('prompt');
+var util = require('util');
 
 function toSentence(tx) {
     // console.log('----------------------------------')
@@ -65,7 +66,7 @@ prompt.get(schema, function(err, input) {
       },
       null,
       function(err, data, response) {
-        if (err) console.log("Error: " + err);
+        if (err) console.log("Error: " + util.inspect(err));
         console.log("Good.")
       }
     );
