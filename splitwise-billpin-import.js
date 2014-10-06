@@ -65,7 +65,8 @@ prompt.get(schema, function(err, input) {
       },
       null,
       function(err, data, response) {
-        console.log(data);
+        if (err) console.log("Error: " + err);
+        console.log("Good.")
       }
     );
   });
