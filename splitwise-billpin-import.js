@@ -15,10 +15,20 @@ var schema = {
     }
   }
 };
+
 prompt.override = optimist.argv;
 prompt.start();
 
 prompt.get(schema, function(err, input) {
+  var oauth = new OAuth.OAuth(
+  'https://secure.splitwise.com/api/v3.0/get_request_token',
+  'https://secure.splitwise.com/api/v3.0/get_access_token',
+  result.consumerKey,
+  result.consumerSecret,
+  '1.0',
+  null,
+  'HMAC-SHA1');
+
   var file = require(__dirname + '\\friend.json');
   var some = _.first(file.results, 20);
   _.each(some, function(tx) {
