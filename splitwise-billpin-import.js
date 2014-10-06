@@ -38,6 +38,7 @@ prompt.get(schema, function(err, input) {
     console.log('Amount: ' + tx.amount);
     console.log('Description: ' + tx.message);
     console.log('Date: ' + tx.happenedAt.iso.substring(0, tx.happenedAt.iso.indexOf('T')));
-    console.log(tx.receiver.name + ' owes ' + tx.sender.name + ' $' + tx.amount + ' for ' + tx.message + ' on ' + tx.happenedAt.iso.substring(0, tx.happenedAt.iso.indexOf('T')));
+    var natural = tx.receiver.name + ' owes ' + tx.sender.name + ' $' + tx.amount + ' for ' + tx.message + ' on ' + tx.happenedAt.iso.substring(0, tx.happenedAt.iso.indexOf('T'));
+    console.log(natural);
   });
 });
