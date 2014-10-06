@@ -54,7 +54,9 @@ prompt.get(schema, function(err, input) {
       input.accessSecret,
       {
         input: natural,
-        friend_id: input.friendId
+        friend_id: input.friendId,
+        //autosave: false,
+        //creation_method: 'quickadd'
       },
       null,
       function(err, data, response) {
