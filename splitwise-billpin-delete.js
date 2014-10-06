@@ -17,9 +17,6 @@ var schema = {
     },
     accessSecret: {
       required: true
-    },
-    friendId: {
-      required: true
     }
   }
 };
