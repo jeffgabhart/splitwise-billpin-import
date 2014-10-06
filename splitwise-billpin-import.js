@@ -17,7 +17,7 @@ prompt.override = optimist.argv;
 prompt.start();
 
 prompt.get(schema, function(err, input) {
-  var file = require(__dirname + '\\' + input.file);
+  var file = require(__dirname + '\\friend.json');
   var some = _.first(file.results, 20);
   _.each(some, function(tx) {
     console.log('----------------------------------')
